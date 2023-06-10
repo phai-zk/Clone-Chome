@@ -1,0 +1,214 @@
+:root {
+    --cw: #fff;
+    --H_app: rgba(232, 234, 237, 0.078);
+    --cb: rgb(138, 180, 248);
+    --H_cb: rgba(138, 180, 248, 0.1);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: arial, sans-serif
+}
+
+body {
+    background: #353535;
+}
+
+.nav {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 10px;
+}
+
+.nav .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-content: center;
+    column-gap: 5px;
+}
+
+.nav .list a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--cw);
+    padding: 5px;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.nav .list:last-child a,
+.nav .list:last-child a :is(svg, img) {
+    border-radius: 100%;
+    fill: currentColor;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.nav .list:last-child a img {
+    background: var(--cw);
+    width: 32px;
+    border: 2px solid #a1a0a0;
+}
+
+.nav .list:first-child {
+    padding: 0 10px;
+}
+
+.nav .list:first-child a:hover {
+    text-decoration: underline;
+}
+
+.nav .list:last-child a:hover {
+    background: var(--H_app);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .Logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: currentColor;
+    color: rgba(255, 255, 255, 0.87);
+    margin: 100px 0 38px 0;
+}
+
+.form {
+    background: var(--cw);
+    border-radius: 150px;
+    padding: 10px;
+    margin: 0 ;
+}
+
+.form div {
+    display: grid;
+    place-content: center;
+    grid-template-columns: min-content minmax(min-content, 450px) 1fr;
+    column-gap: 5px;
+}
+
+.form div input {
+    padding: 0 5px;
+    border: 0;
+}
+
+.form div input:focus::placeholder
+{
+    color: transparent;
+}
+
+.form div input:focus {
+    outline: 0;
+}
+
+.form div :is(svg, button) {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    margin: 0 5px;
+}
+
+.form div button {
+    cursor: pointer;
+}
+
+.shortcut {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+div .box {
+    background: transparent;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+div .box:hover {
+    background: rgba(255, 255, 255, .1);
+}
+
+div .box .add {
+    fill: currentColor;
+    color: rgba(255, 255, 255, 0.87);
+    background: #2a2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    padding: 12px;
+}
+
+div .box span {
+    font-size: 0.75rem;
+    color: var(--cw);
+    padding: 20px 10px 0 10px;
+}
+
+.custom {
+    background: #202124ff;
+    border-radius: 150px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 15px;
+
+}
+
+.custom>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 150px;
+    padding: 6px 20px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+    font-weight: 400;
+    cursor: pointer;
+    position: relative;
+}
+
+.custom>div:hover {
+    transition: .25s;
+    background: var(--H_cb);
+}
+
+.custom svg {
+    fill: currentColor;
+    color: var(--cb);
+}
+
+.custom span {
+    color: var(--cb);
+    font-size: 0.75rem;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 550px) {
+    .custom span {
+        display: none;
+    }
+    .custom>div {
+        border-radius: 100%;
+        padding: 6px 8px;
+    }
+    .form
+    {
+        margin: 0 10%;
+    }
+}
